@@ -1,0 +1,51 @@
+{
+    "name": "@onivoro/server-auth",
+    "version": "0.0.21",
+    "repository": {
+        "url": "git+https://github.com/onivoro/server-auth.git"
+    },
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "files": [
+        "dist/*"
+    ],
+    "scripts": {
+        "onx": "onx",
+        "build": "onx Build",
+        "deploy": "onx Publish",
+        "test": "onx Test",
+        "update": "onx Update"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "require": "./dist/cjs/index.js",
+            "import": "./dist/esm/index.js",
+            "default": "./dist/esm/lib.js"
+        }
+    },
+    "onx": {
+        "platform": "server",
+        "module": "commonjs"
+    },
+    "devDependencies": {
+        "@onivoro/cli": "*",
+        "@types/express": "^4.17.21",
+        "@types/jest": "*",
+        "@types/node": "18.19.1",
+        "typescript": "*"
+    },
+    "engines": {
+        "node": "18.19.1",
+        "npm": "10.2.4"
+    },
+    "dependencies": {
+        "@nestjs/common": "^10.3.3",
+        "@nestjs/swagger": "^7.3.0",
+        "@onivoro/server-common": "^0.1.0",
+        "bcryptjs": "^2.4.3",
+        "jsonwebtoken": "^9.0.2",
+        "rxjs": "^7.8.1"
+    }
+}
