@@ -43,7 +43,7 @@
     "dependencies": {
         "@nestjs/common": "^10.3.3",
         "@nestjs/swagger": "^7.3.0",
-        "@onivoro/server-common": "^0.1.0",
+        "@onivoro/server-common": "^0.1.1",
         "bcryptjs": "^2.4.3",
         "jsonwebtoken": "^9.0.2",
         "rxjs": "^7.8.1"
