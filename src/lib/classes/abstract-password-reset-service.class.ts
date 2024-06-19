@@ -1,7 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
 import bcrypt from 'bcryptjs';
 
-export type TPasswordResetBase = { createdAt?: number | Date | string };
+export type TPasswordResetBase = { createdAt?: number | Date | string, hash: string };
 
 export abstract class AbstractPasswordResetService<TPasswordReset extends TPasswordResetBase> {
     protected abstract _deletePasswordResetByHash(hash: string): Promise<void>;
@@ -35,6 +35,7 @@ export abstract class AbstractPasswordResetService<TPasswordReset extends TPassw
         const existingEntity = await this._getPasswordResetByEmail(email);
 
         if (existingEntity) {
+            await this.sendResetEmail(email, existingEntity.hash);
             return existingEntity;
         }
 
