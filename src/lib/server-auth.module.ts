@@ -7,9 +7,12 @@ import { LoginService } from './services/login.service';
 import { TokenValidationService } from './services/token-validation.service';
 import { ServerAuthConfig } from './classes/server-auth-config.class';
 import { TokenBuilder } from './classes/token-builder.class';
+import { TotpService } from './services/totp.service';
+import { TotpController } from './controllers/totp.controller';
 
 const controllers = [
   LoginController,
+  TotpController,
 ];
 
 const imports = [
@@ -18,6 +21,7 @@ const imports = [
 
 const providers = [
   TokenBuilder,
+  TotpService, ,
 ];
 
 @Module({
