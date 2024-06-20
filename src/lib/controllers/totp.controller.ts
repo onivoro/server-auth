@@ -1,5 +1,5 @@
-import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
-import { ApiBody, ApiResponse } from '@nestjs/swagger';
+import { BadRequestException, Body, Controller, Param, Post } from '@nestjs/common';
+import { ApiBody, ApiParam, ApiResponse } from '@nestjs/swagger';
 import { SuccessDto, ValueDto } from '@onivoro/server-common';
 import { TotpService } from '../services/totp.service';
 import { ServerAuthConfig } from '../classes/server-auth-config.class';
@@ -10,14 +10,11 @@ import { TotpVerificationDto } from '../dtos/totp-verification.dto';
 export class TotpController {
    constructor(private totpSvc: TotpService, private config: ServerAuthConfig) { }
 
-   @Post('generate')
-   @ApiBody({ type: ValueDto })
-   @ApiResponse({ type: ValueDto })
-   async generate(@Body() body: ValueDto): Promise<TotpGenerationDto> {
-      if (!body?.value) {
-         throw new BadRequestException('Missing "label" for token generation')
-      }
-      return await this.totpSvc.generateSecret(this.config.issuer, body.value);
+   @Post('generate/:label')
+   @ApiParam({ type: 'string', name: 'label' })
+   @ApiResponse({ type: TotpGenerationDto })
+   async generate(@Param('label') label: string): Promise<TotpGenerationDto> {
+      return await this.totpSvc.generateSecret(this.config.issuer, label);
    }
 
    @Post('verify')

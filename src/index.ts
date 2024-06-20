@@ -17,6 +17,8 @@ export * from './lib/dtos/email.dto';
 export * from './lib/dtos/login-with-api-credentials.dto';
 export * from './lib/dtos/login-with-email-and-password.dto';
 export * from './lib/dtos/registration-signup.dto';
+export * from './lib/dtos/totp-generation.dto';
+export * from './lib/dtos/totp-verification.dto';
 
 export * from './lib/functions/authorize-request.function';
 export * from './lib/functions/compare-password.function';
@@ -31,5 +33,6 @@ export * from './lib/middleware/auth.middleware';
 
 export * from './lib/services/login.service';
 export * from './lib/services/token-validation.service';
+export * from './lib/services/totp.service';
 
 export * from './lib/server-auth.module';
