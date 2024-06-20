@@ -9,6 +9,13 @@ import { ValueDto } from '@onivoro/server-common';
 export class LoginController<TAccessToken> {
     constructor(private loginSvc: LoginService<TAccessToken>) {}
 
+    @Post('password-totp')
+    @ApiBody({ type: LoginWithEmailAndPasswordDto })
+    @ApiResponse({ type: ValueDto })
+    async postPasswordAndTotp(@Body() body: LoginWithEmailAndPasswordDto): Promise<ValueDto> {
+       return { value: await this.loginSvc.loginWithEmailAndPassword(body) };
+    }
+
     @Post('password')
     @ApiBody({ type: LoginWithEmailAndPasswordDto })
     @ApiResponse({ type: ValueDto })

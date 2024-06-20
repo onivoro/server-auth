@@ -6,7 +6,10 @@ import { TotpVerificationDto } from '../dtos/totp-verification.dto';
 
 @Injectable()
 export class TotpService {
-    constructor(private period = 30, private digits = 6, private algorithm = 'SHA1', private window = 2) { }
+    period = 30;
+    digits = 6;
+    algorithm = 'SHA1';
+    window = 2;
 
     async generateSecret(issuer: string, label: string): Promise<TotpGenerationDto> {
         const secret = new OTPAuth.Secret({ size: 20 });

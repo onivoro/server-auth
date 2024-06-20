@@ -21,7 +21,7 @@ const imports = [
 
 const providers = [
   TokenBuilder,
-  TotpService, ,
+  TotpService,
 ];
 
 @Module({
