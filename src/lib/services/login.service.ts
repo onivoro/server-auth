@@ -46,7 +46,7 @@ export class LoginService<TAccessToken> {
     }
   }
 
-  private sign(payload: any) {
+  sign(payload: any) {
     return jwt.sign(payload, this.config.JWT_SECRET, { expiresIn: this.config.expiresIn });
   }
 }
