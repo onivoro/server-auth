@@ -76,7 +76,7 @@ export class MfaLoginService<TAccessToken> {
     }
   }
 
-  async resolveCredentials(email: string): Promise<{ password: string, totpEnabled: boolean, secret?: string }> {
+  async resolveCredentials(email: string): Promise<{ password: string, totpEnabled?: boolean, secret?: string }> {
     return {} as any;
   }
 
