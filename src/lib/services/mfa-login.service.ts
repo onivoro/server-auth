@@ -31,7 +31,7 @@ export class MfaLoginService<TAccessToken> {
         }
 
         if (this.totpService.verifyToken({ token, secret: _.secret }) !== null) {
-          response.token = await this.loginSvc.sign(await this.loginSvc.loginWithEmailAndPassword(body));
+          response.token = await this.loginSvc.loginWithEmailAndPassword(body);
         } else {
           throw new BadRequestException('That code is invalid');
         }
@@ -67,7 +67,7 @@ export class MfaLoginService<TAccessToken> {
       };
 
       if (!_.totpEnabled) {
-        response.token = await this.loginSvc.sign(await this.loginSvc.loginWithEmailAndPassword(body));
+        response.token = await this.loginSvc.loginWithEmailAndPassword(body);
       }
 
       return response;
