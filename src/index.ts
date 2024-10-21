@@ -15,6 +15,7 @@ export * from './lib/decorators/user-id.decorator';
 export * from './lib/dtos/auth-tokens.dto';
 export * from './lib/dtos/email.dto';
 export * from './lib/dtos/login-with-api-credentials.dto';
+export * from './lib/dtos/mfa-login-with-email-and-password.dto';
 export * from './lib/dtos/login-with-email-and-password.dto';
 export * from './lib/dtos/registration-signup.dto';
 export * from './lib/dtos/totp-generation.dto';
@@ -32,6 +33,7 @@ export * from './lib/guards/sys-admin.guard';
 export * from './lib/middleware/auth.middleware';
 
 export * from './lib/services/login.service';
+export * from './lib/services/mfa-login.service';
 export * from './lib/services/token-validation.service';
 export * from './lib/services/totp.service';
 
