@@ -1,6 +1,6 @@
 {
     "name": "@onivoro/server-auth",
-    "version": "0.0.29",
+    "version": "22.0.0",
     "repository": {
         "url": "git+https://github.com/onivoro/server-auth.git"
     },
