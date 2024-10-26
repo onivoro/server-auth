@@ -44,6 +44,8 @@ export class LoginService<TAccessToken> {
       console.error(error);
       fail();
     }
+
+    return '';
   }
 
   sign(payload: any) {

@@ -30,9 +30,11 @@
         "module": "commonjs"
     },
     "devDependencies": {
-        "@onivoro/cli": "^22.0.4",
+        "@onivoro/cli": "^22.0.8",
+        "@types/bcryptjs": "^2.4.6",
         "@types/express": "^5.0.0",
         "@types/jest": "*",
+        "@types/jsonwebtoken": "^9.0.7",
         "@types/node": "22.8.1",
         "@types/qrcode": "^1.5.5",
         "typescript": "*"
@@ -44,7 +46,7 @@
     "dependencies": {
         "@nestjs/common": "^10.4.6",
         "@nestjs/swagger": "^7.4.2",
-        "@onivoro/server-common": "^22.0.1",
+        "@onivoro/server-common": "^22.0.3",
         "bcryptjs": "^2.4.3",
         "jsonwebtoken": "^9.0.2",
         "otpauth": "^9.3.4",

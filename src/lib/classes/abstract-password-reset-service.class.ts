@@ -45,6 +45,8 @@ export abstract class AbstractPasswordResetService<TPasswordReset extends TPassw
         if (record) {
             await this.sendResetEmail(email, hash);
         }
+
+        return record satisfies TPasswordReset;
     }
 
     async completeReset(hash: string, password: string, confirm: string) {
