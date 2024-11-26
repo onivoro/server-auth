@@ -1,12 +1,12 @@
-import { BadRequestException, Body, Controller, Param, Post } from '@nestjs/common';
+import { Body, Param, Post } from '@nestjs/common';
 import { ApiBody, ApiParam, ApiResponse } from '@nestjs/swagger';
-import { SuccessDto, ValueDto } from '@onivoro/server-common';
+import { DefaultApiController, SuccessDto } from '@onivoro/server-common';
 import { TotpService } from '../services/totp.service';
 import { ServerAuthConfig } from '../classes/server-auth-config.class';
 import { TotpGenerationDto } from '../dtos/totp-generation.dto';
 import { TotpVerificationDto } from '../dtos/totp-verification.dto';
 
-@Controller('totp')
+@DefaultApiController('totp')
 export class TotpController {
    constructor(private totpSvc: TotpService, private config: ServerAuthConfig) { }
 

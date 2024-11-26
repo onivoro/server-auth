@@ -1,11 +1,11 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Post } from '@nestjs/common';
 import { LoginWithEmailAndPasswordDto } from '../dtos/login-with-email-and-password.dto';
 import { LoginWithApiCredentialsDto } from '../dtos/login-with-api-credentials.dto';
 import { ApiBody, ApiResponse } from '@nestjs/swagger';
 import { LoginService } from '../services/login.service';
-import { ValueDto } from '@onivoro/server-common';
+import { DefaultApiController, ValueDto } from '@onivoro/server-common';
 
-@Controller('login')
+@DefaultApiController('login')
 export class LoginController<TAccessToken> {
     constructor(private loginSvc: LoginService<TAccessToken>) {}
 

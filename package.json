@@ -46,7 +46,7 @@
     "dependencies": {
         "@nestjs/common": "^10.4.6",
         "@nestjs/swagger": "^7.4.2",
-        "@onivoro/server-common": "^22.0.3",
+        "@onivoro/server-common": "^22.0.5",
         "bcryptjs": "^2.4.3",
         "jsonwebtoken": "^9.0.2",
         "otpauth": "^9.3.4",

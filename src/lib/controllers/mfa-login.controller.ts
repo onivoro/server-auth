@@ -4,8 +4,9 @@ import { ApiBody, ApiResponse } from '@nestjs/swagger';
 import { MfaLoginWithEmailAndPasswordDto } from '../dtos/mfa-login-with-email-and-password.dto';
 import { MfaLoginService } from '../services/mfa-login.service';
 import { LoginWithEmailAndPasswordDto } from '../dtos/login-with-email-and-password.dto';
+import { DefaultApiController } from '@onivoro/server-common';
 
-@Controller('mfa-login')
+@DefaultApiController('mfa-login')
 export class MfaLoginController<TAccessToken> {
    constructor(
       private loginSvc: MfaLoginService<TAccessToken>,
