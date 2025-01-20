@@ -35,7 +35,7 @@
         "@types/express": "^5.0.0",
         "@types/jest": "*",
         "@types/jsonwebtoken": "^9.0.7",
-        "@types/node": "22.8.1",
+        "@types/node": "22.10.7",
         "@types/qrcode": "^1.5.5",
         "typescript": "*"
     },
@@ -44,12 +44,12 @@
         "npm": "10.9.0"
     },
     "dependencies": {
-        "@nestjs/common": "^10.4.6",
-        "@nestjs/swagger": "^7.4.2",
-        "@onivoro/server-common": "^22.0.5",
+        "@nestjs/common": "^11.0.1",
+        "@nestjs/swagger": "^11.0.2",
+        "@onivoro/server-common": "^22.11.0",
         "bcryptjs": "^2.4.3",
         "jsonwebtoken": "^9.0.2",
-        "otpauth": "^9.3.4",
+        "otpauth": "^9.3.6",
         "qrcode": "^1.5.4"
     }
 }
