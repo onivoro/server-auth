@@ -1,5 +1,4 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import jwt from 'jsonwebtoken';
 
 import { LoginWithApiCredentialsDto } from '../dtos/login-with-api-credentials.dto';
 import { LoginWithEmailAndPasswordDto } from '../dtos/login-with-email-and-password.dto';
@@ -49,6 +48,6 @@ export class LoginService<TAccessToken> {
   }
 
   sign(payload: any) {
-    return jwt.sign(payload, this.config.JWT_SECRET, { expiresIn: this.config.expiresIn });
+    return TokenBuilder.sign({ jwtSecret: this.config.JWT_SECRET, expiresIn: this.config.expiresIn }, payload);
   }
 }
